@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>try javascript</title>
+    <script>
+
+        
+
+        function changeDisplay(){
+
+            const myKeysValues = window.location.search;
+            let urlParams = new URLSearchParams(myKeysValues);
+
+            let param1 = urlParams.get('page');
+
+                if(urlParams.get('page') &&  'projects'){
+                    document.getElementById("projects").style.cssText = "color:blue";
+                    document.getElementById("home").style = "display:none";
+                    document.getElementById("about").style = "display:none";
+                    document.getElementById("contact").style = "display:none";
+                }
+                else{
+                    document.getElementById("projects").style = "display:none";
+                    document.getElementById("home").style = "color:blue";
+                    document.getElementById("about").style = "display:non;";
+                    document.getElementById("contact").style = "display:none";
+                }
+                
+        }
+    </script>
+    <style>
+        a{
+            display: block;
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pharagraph should disappear</h1>
+
+    <p id="home">HOME</p>
+    <p id="projects">PROJECTS</p>
+    <p id="about">ABOUT</p>
+    <p id="contact">CONTACT</p>
+
+    <span onclick="changeDisplay()">Projects</span>
+
+    <a href="js.html">HOME</a>
+    <a href="?page=projects" onclick="changeDisplay()">PROJECTS</a>
+    <a href="?page=about" onclick="changeDisplay()">ABOUT ME</a>
+    <a href="?page=contact" onclick="changeDisplay()">CONTACT</a>
+<br><hr>
+    <h1>JavaScript HTMLElement.style Example</h1>
+    <p id="message">This is a paragraph.</p>
+    <script>
+        var messageElement = document.getElementById("message");
+        messageElement.style="color:#090;border:1px solid #aaa;text-align:center;";
+    </script>
+</body>
+</html>
